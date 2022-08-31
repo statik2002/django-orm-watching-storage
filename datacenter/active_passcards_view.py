@@ -14,7 +14,8 @@ def active_passcards_view(request):
 
     for visit in visits:
         if not visit.leaved_at:
-            print(f"{visit} Находится в хранилище: {time_now-visit.entered_at}")
+            delta = time_now-visit.entered_at
+            print(f"{visit} Находится в хранилище: { delta }")
 
     active_passcards = Passcard.objects.filter(is_active=True)
     context = {
