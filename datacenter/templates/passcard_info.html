@@ -26,38 +26,38 @@
 
   <body>
     <div class="container">
-        <a class="navbar" href="{% url 'storage_information'%}">Список пользователей в хранилище</a>
-        <a class="navbar" href="{% url 'active_passcards' %}">Список активных карт доступа</a>
+      <a class="navbar" href="{% url 'storage_information'%}">Список пользователей в хранилище</a>
+      <a class="navbar" href="{% url 'active_passcards' %}">Список активных карт доступа</a>
         <hr>
         <h2>{{ passcard.owner_name }}</h2>
         <div class="table-responsive">
-            <table class="table">
-                <thead>
-                    <tr>
-                    <th class="table-element">#</th>
-                    <th class="table-element">Когда посетил</th>
-                    <th class="table-element">Продолжительность</th>
-                    <th class="table-element">Был ли визит подозрителен</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for visit in this_passcard_visits %}
-                    <tr>
-                        <td class="table-element">{{ forloop.counter }}</td>
-                            <td class="table-element"><strong>{{ visit.entered_at }}</strong></td>
-                        <td class="table-element">{{ visit.duration }}</td>
-                        <td class="table-element">{{ visit.is_strange }}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+          <table class="table">
+            <thead>
+              <tr>
+                <th class="table-element">#</th>
+                <th class="table-element">Когда посетил</th>
+                <th class="table-element">Продолжительность</th>
+                <th class="table-element">Был ли визит подозрителен</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for visit in this_passcard_visits %}
+                <tr>
+                  <td class="table-element">{{ forloop.counter }}</td>
+                  <td class="table-element"><strong>{{ visit.entered_at }}</strong></td>
+                  <td class="table-element">{{ visit.duration }}</td>
+                  <td class="table-element">{{ visit.is_strange }}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script
       src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
       integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous">
+    </script>
   </body>
 </html>

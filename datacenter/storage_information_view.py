@@ -18,8 +18,6 @@ def storage_information_view(request):
             time_delta = (time_now - visit.entered_at).total_seconds()
             string_timedelta = "{:02}:{:02}:{:02}".format(int(time_delta // 3600), int(time_delta % 3600 // 60),
                                                           int(time_delta % 60))
-            print(
-                f"{visit.passcard} Зашел в хранилище (время по Москве): {timezone.localtime(visit.entered_at)} Находится в хранилище: {string_timedelta}")
             visit_element['who_entered'] = visit.passcard
             visit_element['entered_at'] = visit.entered_at
             visit_element['duration'] = string_timedelta
