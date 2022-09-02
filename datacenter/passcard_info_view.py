@@ -11,10 +11,7 @@ def get_duration(visit):
 
 
 def is_visit_long(visit, minutes=60):
-    is_long = False
-    if get_duration(visit) > minutes*60:
-        is_long = True
-    return is_long
+    return get_duration(visit) > minutes*60
 
 
 def format_duration(time_delta):
