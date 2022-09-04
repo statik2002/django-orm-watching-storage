@@ -15,7 +15,7 @@ def is_visit_long(visit, minutes=60):
 
 
 def format_duration(time_delta):
-    return "{:02}:{:02}:{:02}".format(int(time_delta // 3600),
+    return '{:02}:{:02}:{:02}'.format(int(time_delta // 3600),
                                       int(time_delta % 3600 // 60),
                                       int(time_delta % 60))
 
