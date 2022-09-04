@@ -32,9 +32,11 @@ def passcard_info_view(request, passcode):
 
         time_delta = get_duration(passcard_visit)
 
-        visit = {'entered_at': passcard_visit.entered_at,
-                 'duration': format_duration(time_delta),
-                 'is_strange': is_visit_long(passcard_visit)}
+        visit = {
+            'entered_at': passcard_visit.entered_at,
+            'duration': format_duration(time_delta),
+            'is_strange': is_visit_long(passcard_visit),
+        }
 
         this_passcard_visits.append(visit)
 
