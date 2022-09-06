@@ -5,7 +5,7 @@ from django.utils import timezone
 
 
 def get_duration(visit):
-    if not visit.entered_at:
+    if not visit.leaved_at:
         return (timezone.localtime() - visit.entered_at).total_seconds()
     return (visit.leaved_at - visit.entered_at).total_seconds()
 
